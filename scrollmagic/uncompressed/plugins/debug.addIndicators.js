@@ -22,6 +22,8 @@
 	if (typeof define === 'function' && define.amd) {
 		// AMD. Register as an anonymous module.
 		define(['ScrollMagic'], factory);
+	} else if (typeof module === 'object' && typeof exports === 'object') {
+		module.exports = factory(require('ScrollMagic'));
 	} else {
 		// no browser global export needed, just execute
 		factory(root.ScrollMagic || (root.jQuery && root.jQuery.ScrollMagic));
@@ -62,7 +64,7 @@
 		};
 
 		/**
-		 * Add visual indicators for a ScrollMagic.Scene.  
+		 * Add visual indicators for a ScrollMagic.Scene.
 		 * @memberof! debug.addIndicators#
 		 *
 		 * @example
@@ -73,7 +75,7 @@
 		 * scene.addIndicators({name: "pin scene", colorEnd: "#FFFFFF"});
 		 *
 		 * @param {object} [options] - An object containing one or more options for the indicators.
-		 * @param {(string|object)} [options.parent=undefined] - A selector, DOM Object or a jQuery object that the indicators should be added to.  
+		 * @param {(string|object)} [options.parent=undefined] - A selector, DOM Object or a jQuery object that the indicators should be added to.
 		 If undefined, the controller's container will be used.
 		 * @param {number} [options.name=""] - This string will be displayed at the start and end indicators of the scene for identification purposes. If no name is supplied an automatic index will be used.
 		 * @param {number} [options.indent=0] - Additional position offset for the indicators (useful, when having multiple scenes starting at the same position).
@@ -138,7 +140,7 @@
 	 */
 	// add option to globally auto-add indicators to scenes
 	/**
-	 * Every ScrollMagic.Controller instance now accepts an additional option.  
+	 * Every ScrollMagic.Controller instance now accepts an additional option.
 	 * See {@link ScrollMagic.Controller} for a complete list of the standard options.
 	 * @memberof! debug.addIndicators#
 	 * @method new ScrollMagic.Controller(options)
@@ -499,7 +501,7 @@
 		};
 
 		// updates the trigger group -> either join existing or add new one
-/*	
+/*
 		 * Logic:
 		 * 1 if a trigger group exist, check if it's in sync with Scene settings – if so, nothing else needs to happen
 		 * 2 try to find an existing one that matches Scene parameters
