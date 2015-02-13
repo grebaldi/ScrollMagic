@@ -30,7 +30,7 @@
 		// AMD. Register as an anonymous module.
 		define(['ScrollMagic', 'TweenMax', 'TimelineMax'], factory);
 	} else if (typeof module === 'object' && typeof exports === 'object') {
-		module.exports = factory(require('ScrollMagic'), require('TweenMax'), require('TimelineMax'));
+		module.exports = factory(require('scrollmagic'), require('tweenmax'), require('timelinemax'));
 	} else {
 		// Browser globals
 		factory(root.ScrollMagic || (root.jQuery && root.jQuery.ScrollMagic), root.TweenMax || root.TweenLite, root.TimelineMax || root.TimelineLite);

@@ -30,7 +30,7 @@
 		// AMD. Register as an anonymous module.
 		define(['ScrollMagic', 'velocity'], factory);
 	} else if (typeof module === 'object' && typeof exports === 'object') {
-		module.exports = factory(require('ScrollMagic'), require('velocity'));
+		module.exports = factory(require('scrollmagic'), require('velocity'));
 	} else {
 		// Browser globals
 		factory(root.ScrollMagic || (root.jQuery && root.jQuery.ScrollMagic), root.Velocity || (root.jQuery && root.jQuery.Velocity));

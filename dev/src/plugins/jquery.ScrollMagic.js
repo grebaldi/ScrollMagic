@@ -26,7 +26,7 @@
 		// AMD. Register as an anonymous module.
 		define(['ScrollMagic', 'jquery'], factory);
 	} else if (typeof module === 'object' && typeof exports === 'object') {
-		module.exports = factory(require('ScrollMagic'), require('jquery'));
+		module.exports = factory(require('scrollmagic'), require('jquery'));
 	} else {
 		// Browser global
 		factory(root.ScrollMagic, root.jQuery);
