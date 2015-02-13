@@ -53,8 +53,13 @@
     "through2": "^0.6.3",
     "yargs": "^1.3.2"
   },
+  "browser": {
+    "tweenmax": "./js/greensock/TweenMax.min.js",
+    "timelinemax": "./js/greensock/TimelineMax.min.js"
+  },
   "directories": {
     "lib": "./scrollmagic",
+    "js": "./js/lib",
     "doc": "./doc",
     "example": "./examples"
   },
