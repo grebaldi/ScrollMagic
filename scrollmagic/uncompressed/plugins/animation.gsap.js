@@ -46,7 +46,7 @@
 		err("(" + NAMESPACE + ") -> ERROR: TweenLite or TweenMax could not be found. Please make sure GSAP is loaded before ScrollMagic or use an asynchronous loader like requirejs.");
 	}
 
-	/*
+/*
 	 * ----------------------------------------------------------------
 	 * Extensions for Scene
 	 * ----------------------------------------------------------------

@@ -13,15 +13,17 @@
 /**
  * @namespace ScrollMagic
  */
-(function (root, factory) {
+(function (root, module, factory) {
 	if (typeof define === 'function' && define.amd) {
 		// AMD. Register as an anonymous module.
 		define(factory);
+	} else if (typeof module === 'object' && typeof exports === 'object') {
+		module.exports = factory();
 	} else {
 		// Browser global
 		root.ScrollMagic = factory();
 	}
-}(this, function () {
+}(this, module, function () {
 	"use strict";
 
 	var ScrollMagic = function () {
@@ -57,11 +59,11 @@
 	 *
 	 */
 	ScrollMagic.Controller = function (options) {
-		/*
-		 * ----------------------------------------------------------------
-		 * settings
-		 * ----------------------------------------------------------------
-		 */
+/*
+	 * ----------------------------------------------------------------
+	 * settings
+	 * ----------------------------------------------------------------
+	 */
 		var
 		NAMESPACE = "ScrollMagic.Controller",
 			SCROLL_DIRECTIONS = {
@@ -71,11 +73,11 @@
 			},
 			DEFAULT_OPTIONS = CONTROLLER_OPTIONS.defaults;
 
-		/*
-		 * ----------------------------------------------------------------
-		 * private vars
-		 * ----------------------------------------------------------------
-		 */
+/*
+	 * ----------------------------------------------------------------
+	 * private vars
+	 * ----------------------------------------------------------------
+	 */
 		var
 		Controller = this,
 			_options = _util.extend({}, DEFAULT_OPTIONS, options),
@@ -89,11 +91,11 @@
 			_enabled = true,
 			_updateCycle, _refreshTimeout;
 
-		/*
-		 * ----------------------------------------------------------------
-		 * private functions
-		 * ----------------------------------------------------------------
-		 */
+/*
+	 * ----------------------------------------------------------------
+	 * private functions
+	 * ----------------------------------------------------------------
+	 */
 
 		/**
 		 * Internal constructor function of the ScrollMagic Controller
@@ -671,9 +673,9 @@
 			refreshInterval: 100
 		}
 	};
-	/*
-	 * method used to add an option to ScrollMagic Scenes.
-	 */
+/*
+ * method used to add an option to ScrollMagic Scenes.
+ */
 	ScrollMagic.Controller.addOption = function (name, defaultValue) {
 		CONTROLLER_OPTIONS.defaults[name] = defaultValue;
 	};
@@ -731,22 +733,22 @@
 	 */
 	ScrollMagic.Scene = function (options) {
 
-		/*
-		 * ----------------------------------------------------------------
-		 * settings
-		 * ----------------------------------------------------------------
-		 */
+/*
+	 * ----------------------------------------------------------------
+	 * settings
+	 * ----------------------------------------------------------------
+	 */
 
 		var
 		NAMESPACE = "ScrollMagic.Scene",
 			PIN_SPACER_ATTRIBUTE = "data-scrollmagic-pin-spacer",
 			DEFAULT_OPTIONS = SCENE_OPTIONS.defaults;
 
-		/*
-		 * ----------------------------------------------------------------
-		 * private vars
-		 * ----------------------------------------------------------------
-		 */
+/*
+	 * ----------------------------------------------------------------
+	 * private vars
+	 * ----------------------------------------------------------------
+	 */
 
 		var
 		Scene = this,
@@ -1508,11 +1510,11 @@
 			return pos;
 		};
 
-		/*
-		 * ----------------------------------------------------------------
-		 * Event Management
-		 * ----------------------------------------------------------------
-		 */
+/*
+ * ----------------------------------------------------------------
+ * Event Management
+ * ----------------------------------------------------------------
+ */
 
 		var _listeners = {};
 		/**
@@ -2391,10 +2393,10 @@
 		shifts: ["duration", "offset", "triggerHook"],
 		// list of options that trigger a `shift` event
 	};
-	/*
-	 * method used to add an option to ScrollMagic Scenes.
-	 * TODO: DOC (private for dev)
-	 */
+/*
+ * method used to add an option to ScrollMagic Scenes.
+ * TODO: DOC (private for dev)
+ */
 	ScrollMagic.Scene.addOption = function (name, defaultValue, validationCallback, shifts) {
 		if (!(name in SCENE_OPTIONS.defaults)) {
 			SCENE_OPTIONS.defaults[name] = defaultValue;
@@ -2438,9 +2440,9 @@
 		return this;
 	};
 
-	/*
-	 * TODO: DOCS (private for dev)
-	 */
+/*
+ * TODO: DOCS (private for dev)
+ */
 
 	var _util = ScrollMagic._util = (function (window) {
 		var U = {},

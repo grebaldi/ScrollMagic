@@ -4,15 +4,17 @@
  /**
  * @namespace ScrollMagic
  */
-(function (root, factory) {
+(function (root, module, factory) {
 	if (typeof define === 'function' && define.amd) {
 		// AMD. Register as an anonymous module.
 		define(factory);
+	} else if (typeof module === 'object' && typeof exports === 'object') {
+		module.exports = factory();
 	} else {
 		// Browser global
 		root.ScrollMagic = factory();
 	}
-}(this, function () {
+}(this, module, function () {
 	"use strict";
 
 	var ScrollMagic = function () {
